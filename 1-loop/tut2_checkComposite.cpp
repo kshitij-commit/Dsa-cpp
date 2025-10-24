@@ -1,3 +1,5 @@
+// check whether the number is prime or composite .
+
 #include<iostream>
 using namespace std;
 #include<cmath>
