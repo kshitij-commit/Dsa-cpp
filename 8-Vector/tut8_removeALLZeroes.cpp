@@ -1,5 +1,5 @@
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
 using namespace std;
 // Q3. Remove all zeros
 // Input:
@@ -12,19 +12,23 @@ using namespace std;
 // No extra vector
 // 👉 This is a classic interview problem
 
-int main(){
-    vector<int>v={0, 1, 0, 3, 12};
-   for(int i=0;i<v.size()-1;i++){
-        if(v[i]==0){
-            int temp=v[i];
-            v[i]=v[i+1];
-            v[i+1]=temp;
-
+int main()
+{
+    vector<int> v = {0, 1, 0, 3, 12};
+    int j=0;
+   for(int i=0;i<v.size();i++){
+        if(v[i]!=0){
+            v[j]=v[i];
+            j++;
         }
-            
-
    }
-    for(int i:v){
-        cout<<i<<" ";
+    while(j<v.size()){
+        v[j]=0;
+        j++;
+    }
+
+    for (int i : v)
+    {
+        cout << i << " ";
     }
 }
