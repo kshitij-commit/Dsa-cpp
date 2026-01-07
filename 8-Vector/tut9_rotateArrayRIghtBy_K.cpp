@@ -25,12 +25,31 @@
 #include <vector>
 using namespace std;
 
+int reverse(vector<int> &v, int start, int end)
+{
+    
+
+    while (start < end)
+    {
+
+        int temp = v[start];
+        v[start] = v[end];
+        v[end] = temp;
+        start++;
+        end--;
+    }
+}
 int main()
 {
     int size;
     cout << "enter size of vector:";
     cin >> size;
+
+    if (size == 0)
+        return 0;
+
     vector<int> v(size);
+
     for (int i = 0; i < v.size(); i++)
     {
         cin >> v[i];
@@ -40,23 +59,16 @@ int main()
     cout << "enter number of rotation:";
     cin >> k;
 
-    int l = 0;
-
-    while (l < k)
+    if (k >= size)
     {
-        int temp = v[v.size() - 1];
-
-        for (int i = 0; i < v.size(); i++)
-        {
-            v[v.size()-1]=v[v.size()-1];
-        }
-        v[0] = temp;
-        l++;
-        cout << endl;
+        k = k % size;
     }
+    reverse(v, 0, size - 1);
+    reverse(v, 0, k - 1);
+    reverse(v, k, size - 1);
 
     for (int i : v)
     {
-        cout << i << " ";
+        cout << i <<" ";
     }
 }
