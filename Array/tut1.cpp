@@ -2,6 +2,7 @@
 using namespace std;
 
 // Array-1:
+
         // fixed sized sequence collection of elements of same data type.
         // int take 4 bytes of memory.
         // Array is stored in contiguous memory locations.
