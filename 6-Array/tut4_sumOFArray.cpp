@@ -1,10 +1,5 @@
 
 
-// Calculate sum of the all  the elements of array.
-
-
-
-
 #include<iostream>
 using namespace std;
 
