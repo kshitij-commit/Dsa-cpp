@@ -11,7 +11,7 @@ using namespace std;
 int main(){
     
     int n;
-    cout<<"Enter no of array: ";
+    cout<<"Enter No Of Array: ";
     cin>>n;
 
     int arr[n];
