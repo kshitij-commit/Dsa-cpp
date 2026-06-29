@@ -1,0 +1,17 @@
+# Compiled executables
+*.exe
+*.out
+*.o
+*.obj
+
+# VS Code settings
+.vscode/
+
+# CMake (if you use it later)
+build/
+CMakeFiles/
+CMakeCache.txt
+
+# OS files
+.DS_Store
+Thumbs.db
