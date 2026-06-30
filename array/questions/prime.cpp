@@ -4,7 +4,7 @@ using namespace std;
 
 void isprime(int num){
     int flag = 0;
-    if(num == 1){
+    if(num < 2){
         return;
 
     }
