@@ -1,15 +1,39 @@
 
+# Array:-
 
-*** 05_missingNumber ***
+An array is a collection of elements of the same data type stored in contiguous memory locations and accessed using an index.
 
-## Missing Number
 
-### Pattern
-- Mathematics
-- Prefix Sum Idea (using total sum)
 
-### Formula
-Expected Sum = n × (n + 1) / 2
 
-Missing Number = Expected Sum - Actual Sum
+
+---
+
+## Folder Structure
+
+- concept/
+  - pattern/
+- questions/
+
+---
+
+## Concepts Covered
+
+- [ ] Array Basics
+- [ ] Input / Output
+- [ ] Traversal
+- [x] Array Patterns
+
+
+---
+
+## Questions Solved
+
+- [x] Prime Number
+- [x] Maximum Element
+- [x] Rotate Array
+- [x] Product Equal to One
+- [x] Missing Number
+
+---
 
