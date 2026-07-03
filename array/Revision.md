@@ -36,3 +36,20 @@ Learning:
 - Use long long to avoid integer overflow.
 - Another optimal solution exists using XOR.
 
+*** 06_find-duplicates***
+
+## Find Duplicate Elements
+
+Pattern:
+- Brute Force
+- Nested Loops
+
+Learning:
+- Compare every element with the remaining elements.
+- Store each duplicate only once.
+- Before inserting into the answer, check if it is already present.
+- Brute force solution works but is not optimal because checking the answer vector increases the complexity.
+
+Complexity:
+- Time : O(n³)
+- Space : O(n)
