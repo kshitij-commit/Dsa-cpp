@@ -15,7 +15,7 @@ void mergev1v2(vector<int> v1, vector<int> v2, vector<int> v3)
     int j = 0;
     int k = 0;
 
-    while (i < newSize)
+    while (i < j)
     {
         if (v1[i] <= v2[j])
         {
