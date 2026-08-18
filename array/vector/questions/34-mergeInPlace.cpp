@@ -1,50 +1,68 @@
-#include <iostream>
-#include <vector>
+#include<iostream>
+#include<vector>
 using namespace std;
 
-void mergeInPlace(vector<int>& v1, int m, vector<int>& v2, int n) {
-    int i = m - 1;     // v1 ke valid data ka aakhiri index
-    int j = n - 1;     // v2 ka aakhiri index
-    int k = m + n - 1; // v1 ki bilkul aakhiri boundary ka index (khali jagah)
+void mergeInPlace(vector<int>& v1, vector<int>& v2,int m, int n){
 
-    // Peeche se bade elements ko compare karke v1 ke end mein daalna
-    while (i >= 0 && j >= 0) {
-        if (v1[i] > v2[j]) {
+
+    int i = m-1;
+    int j = n-1;
+    int k = m+n-1;
+
+    while(i>=0 and j>=0){
+        if(v1[i] > v2[j]){
             v1[k] = v1[i];
+            k--;
             i--;
-        } else {
+        }else{
             v1[k] = v2[j];
             j--;
+            k--;
         }
+    }
+    while(j>=0){
+        v1[k] = v2[j];
         k--;
+        j--;
     }
 
-    // Agar v2 ke elements abhi bhi bache hain, toh unhe bache hue khali slots mein daalein
-    while (j >= 0) {
-        v1[k] = v2[j];
-        j--;
-        k--;
-    }
-    // Agar v1 ka 'i' bach jata hai, toh use copy karne ki zaroorat nahi hai 
-    // kyunki woh pehle se hi v1 mein apni sahi sorted position par hai.
 }
 
-int main() {
-    // v1 ka actual size 5 hai, par valid elements sirf 3 hain (1, 5, 9)
-    vector<int> v1 = {1, 5, 9, 0, 0}; 
-    vector<int> v2 = {2, 6};
+int main(){
+    int size1;
+    cout<<"Enter size of vector1: ";
+    cin>>size1;
+
+    int size2;
+    cout<<"Enter size of vector2: ";
+    cin>>size2;
+
+    vector<int> v1(size1);
+    vector<int> v2(size2);
+
     
-    int m = 3; // v1 ke valid elements ka count
-    int n = 2; // v2 ke elements ka count
 
-    mergeInPlace(v1, m, v2, n);
+    int m;
+    cout<<"Enter actual size   of first vector: ";
+    cin>>m;
 
-    // Final result print karna
-    cout << "Merged v1 in place: ";
-    for (int x : v1) {
-        cout << x << " ";
+    int n;
+    cout<<"Enter actual size of second vector: ";
+    cin>>n;
+
+    cout<<"Enter vector 1 elements: ";
+    for(int i=0;i<v1.size();i++){
+        cin>>v1[i];
     }
-    cout << endl;
+    cout<<"Enter vector 2 elements: ";
+    for(int i=0;i<v2.size();i++){
+        cin>>v2[i];
+    }
 
-    return 0;
+    mergeInPlace(v1,v2,m,n);
+    for(int i=0;i<v1.size();i++){
+        cout<<v1[i]<<" ";
+    }
+
+
 }
