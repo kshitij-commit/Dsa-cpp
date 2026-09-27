@@ -81,6 +81,7 @@ int main(){
     //     createNode(head);
     // }while(c == 'Y');
     insertAtBeginning(head);
+    insertAtBeginning(head);
     display(head);
     // insertAtMiddle(head,25,'g',3);
 
