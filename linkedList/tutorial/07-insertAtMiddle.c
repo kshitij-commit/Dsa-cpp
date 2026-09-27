@@ -1,93 +1,85 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-
-struct sll{
+struct sll
+{
     int data;
     char ch;
-    struct sll* p;
+    struct sll *p;
 };
-struct sll* head = NULL;
+struct sll *head = NULL;
 
-void insertNode(){
-    struct sll* node;
-    node = (struct sll*)malloc(sizeof(struct sll));
+void insertNode()
+{
+    struct sll *node;
+    node = (struct sll *)malloc(sizeof(struct sll));
     printf("Enter data for node. ");
-    scanf(" %c %d",&node->ch, &node->data);
+    scanf(" %c %d", &node->ch, &node->data);
 
-    if(head == NULL){
+    if (head == NULL)
+    {
         node->p = NULL;
         head = node;
-    }else{
+    }
+    else
+    {
         node->p = head;
         head = node;
     }
-
-
-    
-
 }
 
-void insertAtMiddle(){
-    struct sll* new;
+void insertAtMiddle()
+{
+    struct sll *new;
     int pos;
-    printf("Enter position to insert node.");
-    scanf("%d", &pos);
+
     int count = 0;
-    new = (struct sll*)malloc(sizeof(struct sll));
+    new = (struct sll *)malloc(sizeof(struct sll));
     printf("Enter data for node: ");
     scanf(" %c %d", &new->ch, &new->data);
 
-    if(head == NULL){
+    if (head == NULL)
+    {
         head = new;
         new->p = NULL;
         return;
-    }else{
-        
-        struct sll* temp  = head;
-        while(count < (pos-2)){
+    }
+    else
+    {
+        printf("Enter position to insert node.");
+        scanf("%d", &pos);
+
+        struct sll *temp = head;
+        while (count < (pos - 2))
+        {
             temp = temp->p;
             count++;
         }
         new->p = temp->p;
         temp->p = new;
-        
     }
-    
-
 }
 
-void display(){
-    if(head == NULL){
-        printf("Empty list");
-    }else{
-        struct sll* temp = head;
-        while(temp != NULL){
-            printf("|%c %d|-> ",temp->ch,temp->data);
-            temp = temp->p;
-        }
-    }
 
-}
 
-int main(){
+int main()
+{
     char c;
-    
-    do{
-        printf("Are you want to insert node (Y/N): ");
-        scanf(" %c",&c);
 
-        if(c == 'Y'){
+    do
+    {
+        printf("Are you want to insert node (Y/N): ");
+        scanf(" %c", &c);
+
+        if (c == 'Y')
+        {
 
             insertNode();
         }
 
-       
-    }while(c == 'Y');
+    } while (c == 'Y');
 
-    
     insertAtMiddle();
     printf("\n");
     display();
-
 }
