@@ -65,7 +65,7 @@ int main(){
     insertNodeAtFront();
     insertNodeAtFront();
     insertNodeAtFront();
-    deletedLastNode();
+    deleteMiddleNode();
     display();
 
 }
