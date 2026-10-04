@@ -28,6 +28,25 @@ void insertAtLast(){
         temp->next = new;
     }
 }
+void insertAtFront(){
+    struct cll* new = NULL;
+    new = (struct cll*)malloc(sizeof(struct cll));
+    printf("Enter data for node:");
+    scanf(" %c", &new->data);
+    
+    if(head == NULL){
+        new->next = new;
+        head = new;
+    }else{
+        struct cll* temp = head;
+        while(temp->next != head){
+            temp = temp->next;
+        }
+        new->next = head;
+        head = new;
+        temp->next = head;
+    }
+}
 void display(){
     if(head == NULL)
         printf("List is empty.");
@@ -40,8 +59,9 @@ void display(){
     }
 }
 int main (){
-    insertAtLast();
-    insertAtLast();
+    insertAtFront();
+    insertAtFront();
+    insertAtFront();
     insertAtLast();
     display();
 }
